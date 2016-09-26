@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>denghf</title>
+  <title>Blog by DHF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="denghf">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="denghf">
+<meta property="og:title" content="Blog by DHF">
+<meta property="og:url" content="http://denghf.github.io/index.html">
+<meta property="og:site_name" content="Blog by DHF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="denghf">
+<meta name="twitter:title" content="Blog by DHF">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -140,7 +140,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/第一篇/" style="font-size: 10px;">第一篇</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -218,11 +218,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-fep" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-第一篇" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/21/fep/" class="article-date">
-      <time datetime="2016-09-21T10:11:14.000Z" itemprop="datePublished">2016-09-21</time>
+      <a href="/2016/09/26/第一篇/" class="article-date">
+      <time datetime="2016-09-26T04:17:20.000Z" itemprop="datePublished">2016-09-26</time>
 </a>
     </div>
   
@@ -235,7 +235,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/21/fep/">fep</a>
+      <a class="article-title" href="/2016/09/26/第一篇/">第一篇</a>
     </h1>
   
 
@@ -245,107 +245,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#FEP（frontend platform）</p>
-<blockquote>
-<p>使用说明</p>
-</blockquote>
-<pre><code>1、下载npm包
-npm test_fep install -g (全局安装)
-（会自动安装test_fep.cmd文件，可在DOS命令行直接输入命令test_fep）
-
-2、创建本地项目目录结构
-fep -project XXXX
-
-3、发布命令
-fep -debug  //debug模式
-fep -final  //产出模式
-</code></pre><blockquote>
-<p>目录配置</p>
-</blockquote>
-<pre><code>发布的目录
-    1、debug目录:
-        ptres.XXX.com/js/XXX2016/debug/css/
-        ptres.XXX.com/js/XXX2016/debug/images/
-        ptres.XXX.com/js/XXX2016/debug/js/
-    2、final目录：
-        img1.XXX.com/XXX/css/
-        img1.XXX.com/XXX/images/
-        ptres.XXX.com/js/XXX/
-路径均可在fis-conf.js的opt中修改
-
-var opts = {
-    //目录结构模块
-    modulesArr: [&apos;index&apos;, &apos;common&apos;, &apos;goods&apos;, &apos;pay&apos;, &apos;role&apos;, &apos;user&apos;],
-    //debug发布目录
-    outputUrlDebug: &quot;/ptres.XXX.com/js/XXX/debug&quot;,
-    //js发布目录
-    outputUrlJs: &quot;/ptres.XXX.com/js/XXX&quot;,
-    //css\images发布目录
-    outputUrlCss: &quot;/img1.XXX.com/XXX&quot;
-};
-</code></pre><blockquote>
-<p>debug</p>
-</blockquote>
-<pre><code>代码为合并不压缩状态
-代码路径为debug
-</code></pre><blockquote>
-<p>final</p>
-</blockquote>
-<pre><code>代码为合并压缩装态
-代码路径为平台目录结构
-</code></pre><blockquote>
-<p>html注释说明</p>
-</blockquote>
-<pre><code>代码示范
-    &lt;!-- @if system=&apos;debug&apos; --&gt;
-    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;../ptres.XXX.com/js/XXX/debug/css/common.css?t=201607061124VER&quot;&gt;
-    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;../ptres.XXX.com/js/XXX/debug/css/index.css?t=201607061124VER&quot;&gt;
-    &lt;!-- @endif --&gt;
-    &lt;!-- @if system=&apos;release&apos; --&gt;
-    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://img1.XXX.com/XXX/css/common.css?t=201607061124VER&quot;&gt;
-    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://img1.XXX.com/XXX/css/index.css?t=201607061124VER&quot;&gt;
-    &lt;!-- @endif --&gt;
-
-debug命令模式会保留system=&apos;debug&apos;代码片段
-final命令模式会保留system=&apos;release&apos;代码片段
-js\css注释类似（js\css的注释语法）
-</code></pre><blockquote>
-<p>功能说明</p>
-</blockquote>
-<pre><code>1.模块化开发目录结构
-2.雪碧图制作，css引入图片路径后增加&quot;?__sprite&quot;即可，自动合并成一张雪碧图，引用路径自动修改。
-（但是雪碧图制作后生成的路径和css同级目录，后期可完善）
-3.基于fis3解决方案封装fep命令
-4.支持使用sass（或less）作为css编译器，可以任意使用sass编译器支持的语法。
-5.发布时自动合并js\css为各模块下的js、css代码。
-6.js源码基于amd规范，使用requirejs作为加载器。
-7.自动化发布代码到远程服务器，支持http-push上传。
-8.代码可区分debug、release状态模式的代码，发布时自动切换。
-</code></pre><blockquote>
-<p>待改善</p>
-</blockquote>
-<pre><code>sprite图生成为css同级目录
-未封装命令
-未发布到cnpm
-</code></pre><blockquote>
-<p>fis3</p>
-</blockquote>
-<pre><code>项目需要解决的问题
-1、合并压缩文件问题（js\css\image-sprite）
-2、模块化开发
-3、目录结构快速搭建
-4、自动发布远程服务器
-5、debug-release模式切换
-6、自定义命令
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-7、smarty问题
-8、时间戳-md5问题
-9、资源定位问题
-10、实时浏览器刷新
-</code></pre><blockquote>
-<p>node</p>
-</blockquote>
-
+              <p>这个是使用[Hexo][<a href="http://hexo.io/]搭建的一个简单博客，我也不知道我会写些什么或者坚持多久，但是就是开心就来捣鼓捣鼓，纯属自嗨~~！">http://hexo.io/]搭建的一个简单博客，我也不知道我会写些什么或者坚持多久，但是就是开心就来捣鼓捣鼓，纯属自嗨~~！</a><br>
+          
       
     </div>
     
@@ -354,6 +255,14 @@ js\css注释类似（js\css的注释语法）
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/第一篇/">第一篇</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/09/26/第一篇/#more">更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -380,7 +289,7 @@ js\css注释类似（js\css的注释语法）
                 &copy; 2016 Deng Huafen
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+               Let bygones be bygones.
             </div>
         </div>
         
